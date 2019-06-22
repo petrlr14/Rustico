@@ -7,20 +7,31 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="http://localhost:8080/Tarea2NC/resources/js/login.js"></script>
+<script type="text/javascript"
+	src="http://localhost:8080/Tarea2NC/resources/js/login.js"></script>
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<link href="./resources/css/login.css" rel="stylesheet">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
 </head>
 <body>
-	<!--<form:form action="${pageContext.request.contextPath}/login/validate" method="post" modelAttribute="form">
-		<form:input path="username" type="text" id="username"/>
-		<form:input path="password" type="password" id="password"/>
-		<input type="submit" value="Login"/>
-	</form:form>-->
-	<div class="form">
-		<input type="text" id="username"/>
-		<input type="password" id="password"/>
-		<button id="validate">Login</button>
+	<div class="wrapper fadeInDown">
+		<div id="formContent">
+			<div class="fadeIn first">
+				<div id="icon">
+					<div class="decolor"><span>Rustico Restaurant</span></div>
+				</div>
+			</div>
+			<input type="text" id="username" /> <input type="password"
+				id="password" />
+			<button id="validate">Login</button>
+		</div>
 	</div>
-	<div id="error">
-	</div>
+	
 </body>
 </html>

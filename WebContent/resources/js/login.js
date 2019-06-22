@@ -1,7 +1,6 @@
 window.addEventListener("load", (e)=>{
 	const btn=document.querySelector("#validate");
 	const div=document.querySelector("#error");
-	const btnPerfil=document.querySelector("#perfil");
 	btn.addEventListener('click', ()=>{
 		const usr=document.querySelector("#username");
 		const psw=document.querySelector("#password");
@@ -27,8 +26,5 @@ window.addEventListener("load", (e)=>{
 		.catch(error=>{
 			console.log(error);
 		})
-	});
-	btnPerfil.addEventListener("click", ()=>{
-		console.log("click");
 	});
 });

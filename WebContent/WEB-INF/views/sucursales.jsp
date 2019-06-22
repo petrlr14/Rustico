@@ -8,11 +8,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript"
-	src="http://localhost:8080/Tarea2NC/resources/js/sucursal.js"></script>
 </head>
 <body>
-	
+
+	<h1>Todas las sucursales</h1>
+
+	<form action="${pageContext.request.contextPath}/sucursal/save"
+		method="get">
+		<input type="hidden" value=""> <input type="submit"
+			value="Crear una sucursal">
+	</form>
+
 	<table>
 		<tr>
 			<th>Gerente</th>
@@ -22,18 +28,31 @@
 			<th>Acci&oacute;n</th>
 		</tr>
 
+
 		<c:forEach items="${lista}" var="suc">
 			<tr>
 				<td>${suc.nomGerenteS}</td>
 				<td>${suc.nombreS}</td>
 				<td>${suc.horarioS}</td>
 				<td>${fn:length(suc.empleados)}</td>
-				<td><form action="${pageContext.request.contextPath}/sucursal/perfil" method="post">
-					<input id="value" name="code" value="${suc.sucursalC}" type="hidden">
-					<input id="perfil" value="Ver perfil" type="submit">
-				</form></td>
+				<td>
+					<form action="${pageContext.request.contextPath}/sucursal/perfil"
+						method="get">
+						<input id="value" name="code" value="${suc.sucursalC}"
+							type="hidden"> <input id="perfil" value="Ver perfil"
+							type="submit">
+					</form>
+					<form action="${pageContext.request.contextPath}/sucursal/delete"
+						method="post">
+						<input id="value" name="id" value="${suc.sucursalC}"
+							type="hidden"> <input id="perfil" value="Eliminar"
+							type="submit">
+					</form>
+				</td>
 			</tr>
 		</c:forEach>
+
+
 	</table>
 </body>
 </html>

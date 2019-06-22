@@ -11,28 +11,38 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @NoArgsConstructor
 @Entity
 @Table(schema = "public", name = "sucursal")
-public @Data class Sucursal {
+@Setter
+@Getter
+public class Sucursal {
 	@Id
 	@GeneratedValue(generator = "sucursal_c_sucursal_seq", strategy = GenerationType.AUTO)
 	@SequenceGenerator(name = "sucursal_c_sucursal_seq", sequenceName = "public.sucursal_c_sucursal_seq", allocationSize = 1)
 	@Column(name = "c_sucursal")
 	private Long sucursalC;
 	@Column(name = "s_nombre")
+	@NotBlank
 	private String nombreS;
 	@Column(name = "s_ubicacion")
+	@NotBlank
 	private String ubicacionS;
 	@Column(name = "s_horario")
+	@NotBlank
 	private String horarioS;
 	@Column(name = "s_nmesas")
-	private Integer nMesasS;
+	@Min(0)
+	private Integer numMesasS;
 	@Column(name = "s_nomgerente")
+	@NotBlank
 	private String nomGerenteS;
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "sucursalE")
 	private List<Empleado> empleados;

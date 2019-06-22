@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,13 +31,16 @@ public class Empleado {
 	@Column(name = "c_empleado")
 	private Long empleadoC;
 	@Column(name = "e_nombre")
+	@NotBlank
 	private String nombreE;
 	@Column(name = "e_edad")
-	private Integer edadE;
+	@Min(18)
+	private Integer edadE = 18;
 	@Column(name = "e_genero")
+	@NotBlank
 	private String generoE;
 	@Column(name = "e_estado")
-	private Boolean estadoE;
+	private Boolean estadoE = true;
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "e_sucursal")
 	private Sucursal sucursalE;
