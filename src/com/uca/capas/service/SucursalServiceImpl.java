@@ -24,4 +24,14 @@ public class SucursalServiceImpl implements SucursalService {
 		return sucursalRepository.findOne(id);
 	}
 
+	@Override
+	public Sucursal save(Sucursal suc) {
+		return sucursalRepository.saveAndFlush(suc);
+	}
+
+	@Override
+	public void delete(Long id) {
+		sucursalRepository.delete(id);
+	}
+
 }

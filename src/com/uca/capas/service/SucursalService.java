@@ -10,4 +10,8 @@ public interface SucursalService {
 
 	public Sucursal getSucursalById(Long id);
 
+	public Sucursal save(Sucursal suc);
+
+	public void delete(Long id);
+
 }
