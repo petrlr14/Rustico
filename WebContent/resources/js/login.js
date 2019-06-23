@@ -18,7 +18,7 @@ const log=(pageContext)=>{
 			      $("#error-container").slideUp(500);
 			});
 		}else{
-			window.location.href = `${pageContext}/sucursal`;
+			window.location.href = `${pageContext}/sucursal/`;
 		}
 	})
 	.catch(error=>{

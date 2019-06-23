@@ -18,12 +18,12 @@
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
 
+<link href="./resources/css/table.css" rel="stylesheet">
+<link href="./resources/css/button.css" rel="stylesheet">
+<link href="./resources/css/sucursales.css" rel="stylesheet">
 <link href="../resources/css/table.css" rel="stylesheet">
 <link href="../resources/css/button.css" rel="stylesheet">
 <link href="../resources/css/sucursales.css" rel="stylesheet">
-<link href="../../resources/css/table.css" rel="stylesheet">
-<link href="../../resources/css/button.css" rel="stylesheet">
-<link href="../../resources/css/sucursales.css" rel="stylesheet">
 <link rel="icon" href="https://www.pngkey.com/png/detail/448-4480086_html5-icon-restaurant.png">
 </head>
 <body>
