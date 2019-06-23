@@ -13,6 +13,8 @@
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
 <link href="./resources/css/login.css" rel="stylesheet">
+<link href="./resources/css/button.css" rel="stylesheet">
+<link href="./resources/css/inputs.css" rel="stylesheet">
 <script
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script
@@ -27,11 +29,13 @@
 					<div class="decolor"><span>Rustico Restaurant</span></div>
 				</div>
 			</div>
-			<input type="text" id="username" /> <input type="password"
-				id="password" />
-			<button id="validate">Login</button>
+			<input type="text" id="username" placeholder="Username" /> <input type="password"
+				id="password" placeholder="Password" />
+			<button id="validate" onclick="log('${pageContext.request.contextPath}')">Login</button>
 		</div>
 	</div>
-	
+	<div class="alert alert-danger fixed-top" rol="alert" id="error-container">
+		Credenciales erroneas
+	</div>
 </body>
 </html>

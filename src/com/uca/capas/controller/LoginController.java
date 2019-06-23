@@ -17,7 +17,7 @@ import com.uca.capas.response.LoginResponse;
 import com.uca.capas.service.UsuarioService;
 
 @Controller
-@RequestMapping("/login")
+@RequestMapping("/")
 public class LoginController {
 
 	@Autowired

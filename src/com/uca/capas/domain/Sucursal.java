@@ -35,9 +35,12 @@ public class Sucursal {
 	@Column(name = "s_ubicacion")
 	@NotBlank
 	private String ubicacionS;
-	@Column(name = "s_horario")
+	@Column(name = "s_abre")
 	@NotBlank
-	private String horarioS;
+	private String abreS;
+	@Column(name = "s_cierra")
+	@NotBlank
+	private String cierraS;
 	@Column(name = "s_nmesas")
 	@Min(0)
 	private Integer numMesasS;
@@ -46,5 +49,9 @@ public class Sucursal {
 	private String nomGerenteS;
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "sucursalE")
 	private List<Empleado> empleados;
+
+	public String getHorario() {
+		return new StringBuilder().append(this.getAbreS()).append(" - ").append(this.getCierraS()).toString();
+	}
 
 }

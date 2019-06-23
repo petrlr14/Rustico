@@ -108,7 +108,7 @@ public class SucursalController {
 	public ModelAndView delete(@RequestParam Long id) {
 		ModelAndView mav = new ModelAndView();
 		sucursalService.delete(id);
-		mav.setViewName("redirect:/sucursal/");
+		mav.setViewName("redirect:/sucursal");
 		return mav;
 	}
 
