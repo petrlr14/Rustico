@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Empleado</title>
 <link rel="stylesheet"
 	href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
 	integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX"
@@ -23,6 +23,7 @@
 <link href="../../resources/css/inputs.css" rel="stylesheet">
 <link href="../../resources/css/forms.css" rel="stylesheet">
 <link href="../../resources/css/error.css" rel="stylesheet">
+<link rel="icon" href="https://www.pngkey.com/png/detail/448-4480086_html5-icon-restaurant.png">
 </head>
 <body>
 

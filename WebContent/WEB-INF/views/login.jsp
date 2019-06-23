@@ -6,9 +6,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Login</title>
 <script type="text/javascript"
-	src="http://localhost:8080/Tarea2NC/resources/js/login.js"></script>
+	src="./resources/js/login.js"></script>
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
@@ -21,6 +21,7 @@
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+<link rel="icon" href="https://www.pngkey.com/png/detail/448-4480086_html5-icon-restaurant.png">
 </head>
 <body>
 	<div class="wrapper fadeInDown">

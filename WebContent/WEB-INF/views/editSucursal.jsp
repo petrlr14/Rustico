@@ -25,7 +25,8 @@
 <link href="../../resources/css/inputs.css" rel="stylesheet">
 <link href="../../resources/css/forms.css" rel="stylesheet">
 <link href="../../resources/css/error.css" rel="stylesheet">
-<title>Insert title here</title>
+<link rel="icon" href="https://www.pngkey.com/png/detail/448-4480086_html5-icon-restaurant.png">
+<title>Sucursal</title>
 </head>
 <body>
 
