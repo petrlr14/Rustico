@@ -28,7 +28,7 @@ public class SucursalController {
 	@Autowired
 	SucursalService sucursalService;
 
-	@GetMapping(path = "")
+	@GetMapping(path = { "", "/" })
 	@ResponseBody
 	public ModelAndView allSucursales() {
 		ModelAndView mav = new ModelAndView();
@@ -37,7 +37,7 @@ public class SucursalController {
 		return mav;
 	}
 
-	@GetMapping(path = "/perfil")
+	@GetMapping(path = { "/perfil", "/perfil/" })
 	public ModelAndView perfil(@RequestParam Long code) {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("perfil");
@@ -48,7 +48,7 @@ public class SucursalController {
 		return mav;
 	}
 
-	@GetMapping(path = "/edit")
+	@GetMapping(path = { "/edit", "/edit/" })
 	public ModelAndView editar(@RequestParam Long code, final Model model, @ModelAttribute Sucursal sucursal,
 			BindingResult result) {
 		ModelAndView mav = new ModelAndView();
@@ -65,7 +65,7 @@ public class SucursalController {
 		return mav;
 	}
 
-	@GetMapping(path = "/save")
+	@GetMapping(path = { "/save", "/save/" })
 	public ModelAndView crear(@ModelAttribute Sucursal sucursal, final Model model, BindingResult result) {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("editSucursal");
@@ -80,7 +80,7 @@ public class SucursalController {
 		return mav;
 	}
 
-	@PostMapping(path = "/save")
+	@PostMapping(path = { "/save", "/save/" })
 	public ModelAndView save(@Valid @ModelAttribute Sucursal sucursal, BindingResult result, RedirectAttributes attr) {
 		ModelAndView mav = new ModelAndView();
 		if (result.hasErrors()) {
@@ -94,7 +94,6 @@ public class SucursalController {
 			}
 		}
 		Long id = sucursal.getSucursalC();
-		System.out.println(id);
 		sucursalService.save(sucursal);
 		mav.setViewName("redirect:/sucursal");
 		if (id != null) {
@@ -104,7 +103,7 @@ public class SucursalController {
 		return mav;
 	}
 
-	@PostMapping(path = "/delete")
+	@PostMapping(path = { "/delete", "/delete/" })
 	public ModelAndView delete(@RequestParam Long id) {
 		ModelAndView mav = new ModelAndView();
 		sucursalService.delete(id);

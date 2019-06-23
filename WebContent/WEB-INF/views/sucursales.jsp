@@ -18,9 +18,12 @@
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
 
-<link href="./resources/css/table.css" rel="stylesheet">
-<link href="./resources/css/button.css" rel="stylesheet">
-<link href="./resources/css/sucursales.css" rel="stylesheet">
+<link href="../resources/css/table.css" rel="stylesheet">
+<link href="../resources/css/button.css" rel="stylesheet">
+<link href="../resources/css/sucursales.css" rel="stylesheet">
+<link href="../../resources/css/table.css" rel="stylesheet">
+<link href="../../resources/css/button.css" rel="stylesheet">
+<link href="../../resources/css/sucursales.css" rel="stylesheet">
 </head>
 <body>
 
@@ -29,14 +32,14 @@
 	<div class="add">
 		<form action="${pageContext.request.contextPath}/sucursal/save"
 			method="get">
-			<input type="hidden" value="">
+			<input type="hidden" value="" name="id">
 			<button type="submit" class="btn btn-success bmd-btn-fab">
 				<i class="material-icons">add</i>
 			</button>
 		</form>
 	</div>
 
-	<table class="table table-striped table-bordered">
+	<table class="table table-striped table-bordered"">
 		<thead class="thead-dark">
 			<tr>
 				<th scope="col">Nombre de la sucursal</th>
@@ -74,7 +77,6 @@
 
 	</table>
 
-
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 		crossorigin="anonymous"></script>
@@ -90,5 +92,6 @@
 			$('body').bootstrapMaterialDesign();
 		});
 	</script>
+
 </body>
 </html>

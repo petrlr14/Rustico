@@ -1,9 +1,7 @@
-.add{
-	position: fixed;
-    bottom: 0px;
-    right: 0px; 
-}
-
 label{
 	display:block;
+}
+
+.info{
+	margin:1em 0em 1em 0;
 }

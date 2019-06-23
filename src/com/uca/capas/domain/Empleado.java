@@ -45,4 +45,8 @@ public class Empleado {
 	@JoinColumn(name = "e_sucursal")
 	private Sucursal sucursalE;
 
+	public String getState() {
+		return this.getEstadoE() ? "Activo" : "Inactivo";
+	}
+
 }

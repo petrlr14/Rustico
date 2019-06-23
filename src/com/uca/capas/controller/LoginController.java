@@ -23,7 +23,7 @@ public class LoginController {
 	@Autowired
 	UsuarioService usuarioService;
 
-	@GetMapping("")
+	@GetMapping(path = { "", "/" })
 	public ModelAndView login() {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("login");
@@ -31,7 +31,7 @@ public class LoginController {
 		return mav;
 	}
 
-	@PostMapping(path = "/validate", consumes = "application/json")
+	@PostMapping(path = { "/validate", "/validate/" }, consumes = "application/json")
 	public @ResponseBody ResponseEntity<LoginResponse> validate(@RequestBody LoginForm form) {
 		Usuario usr = usuarioService.findUsuarioLogin(form.getUsername(), form.getPassword());
 		LoginResponse lr = new LoginResponse(usr != null);

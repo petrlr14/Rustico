@@ -29,22 +29,16 @@ public class EmpleadoController {
 	@Autowired
 	SucursalService sucursalService;
 
-	@GetMapping("/editar")
-	public ModelAndView editar(@RequestParam Long code, Model model) {
-		ModelAndView mav = new ModelAndView();
-		Empleado emp = empleadoService.findById(code);
-		mav.setViewName("empleado");
-		mav.addObject("empleado", emp);
-		mav.addObject("idSuc", emp.getSucursalE().getSucursalC());
-		return mav;
-	}
-
-	@GetMapping("/crear")
-	public ModelAndView crear(@RequestParam Long code, @ModelAttribute Empleado empleado, Model model,
-			BindingResult result) {
+	@GetMapping(path = { "/save", "/save/" })
+	public ModelAndView crear(@RequestParam("id") Long id, @RequestParam Long code, @ModelAttribute Empleado empleado,
+			Model model, BindingResult result) {
 		ModelAndView mav = new ModelAndView();
 		if (!model.asMap().containsKey("BindingResult")) {
-			mav.addObject("empleado", new Empleado());
+			if (id == null || id == -1) {
+				mav.addObject("empleado", new Empleado());
+			} else {
+				mav.addObject("empleado", empleadoService.findById(id));
+			}
 		} else {
 			mav.addObject("empleado", (Empleado) model.asMap().get("empleado"));
 			((BindingResult) model.asMap().get("BindingResult")).getAllErrors().forEach((element) -> {
@@ -56,30 +50,27 @@ public class EmpleadoController {
 		return mav;
 	}
 
-	@PostMapping(path = "/save")
+	@PostMapping(path = { "/save", "/save/" })
 	public ModelAndView save(@RequestParam Long code, @Valid @ModelAttribute Empleado empleado, BindingResult result,
 			RedirectAttributes attr) {
 		ModelAndView mav = new ModelAndView();
 		if (result.hasErrors()) {
-			attr.addAttribute("code", code);
+			attr.addAttribute("code", code).addAttribute("id",
+					empleado.getEmpleadoC() == null ? -1 : empleado.getEmpleadoC());
 			attr.addFlashAttribute("BindingResult", result);
 			attr.addFlashAttribute("empleado", empleado);
-			if (empleado.getEmpleadoC() == null) {
-				mav.setViewName("redirect:/empleado/crear");
-			} else {
-				mav.setViewName("redirect:/empleado/editar");
-			}
+			mav.setViewName("redirect:/empleado/save");
 		} else {
 			Sucursal suc = sucursalService.getSucursalById(code);
 			empleado.setSucursalE(suc);
 			empleadoService.save(empleado);
+			attr.addAttribute("code", suc.getSucursalC());
 			mav.setViewName("redirect:/sucursal/perfil");
 		}
-
 		return mav;
 	}
 
-	@PostMapping(path = "/delete")
+	@PostMapping(path = { "/delete", "/delete/" })
 	public ModelAndView delete(@RequestParam Integer code) {
 		Long id = empleadoService.findById(Long.parseLong("" + code)).getSucursalE().getSucursalC();
 		empleadoService.delete(Long.parseLong("" + code));

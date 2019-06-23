@@ -15,6 +15,7 @@
 <link href="./resources/css/login.css" rel="stylesheet">
 <link href="./resources/css/button.css" rel="stylesheet">
 <link href="./resources/css/inputs.css" rel="stylesheet">
+<link href="./resources/css/forms.css" rel="stylesheet">
 <script
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script
