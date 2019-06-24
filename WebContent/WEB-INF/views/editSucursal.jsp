@@ -68,7 +68,7 @@
 	</div>
 	
 	<div class="back">
-		<form action="${pageContext.request.contextPath}/sucursal/perfil"
+		<form action="${pageContext.request.contextPath}/sucursal/back"
 			method="get">
 			<input type="hidden" value="${sucursal.sucursalC}" name="code">
 			<button type="submit" class="btn btn-primary bmd-btn-fab">

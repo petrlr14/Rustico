@@ -111,4 +111,16 @@ public class SucursalController {
 		return mav;
 	}
 
+	@GetMapping(path = { "/back/", "/back" })
+	public ModelAndView back(@RequestParam("code") Long code, RedirectAttributes attr) {
+		ModelAndView mav = new ModelAndView();
+		if (code == null) {
+			mav.setViewName("redirect:/sucursal");
+		} else {
+			attr.addAttribute("code", code);
+			mav.setViewName("redirect:/sucursal/perfil");
+		}
+		return mav;
+	}
+
 }
